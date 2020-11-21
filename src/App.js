@@ -1,12 +1,21 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 import {hot} from "react-hot-loader";
-import "./App.css";
+import Banner from './Banner';
+import Board from './Board';
+
+const testData = {
+  name: 'My Test Board',
+  lists: [{
+    title: 'My first list'
+  }]
+}
 
 class App extends Component{
   render(){
     return(
-      <div className="App">
-        <h1> Hello, World! </h1>
+      <div id="app">
+        <Banner />
+        <Board board={testData}/>
       </div>
     );
   }

@@ -6,7 +6,8 @@ import Board from './Board';
 const testData = {
   name: 'My Test Board',
   lists: [{
-    title: 'My first list'
+    title: 'My first list',
+    items: [{description: 'Test item description'}]
   }]
 }
 

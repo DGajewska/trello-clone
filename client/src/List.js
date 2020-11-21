@@ -1,4 +1,10 @@
 import React, { Component } from "react";
+import ListItem from './ListItem';
+
+const getListItems = items => 
+  items.map(item => {
+    return <ListItem item={item} />
+  })
 
 class List extends Component {
   constructor(props) {
@@ -12,6 +18,7 @@ class List extends Component {
           <h3 className="list-title">
             {this.props.list.title}
           </h3>
+          {getListItems(this.props.list.items)}
         </div>
       </div>
     );

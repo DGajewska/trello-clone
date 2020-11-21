@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import List from './List';
+import AddList from './AddList';
 
 const listAddProps = {
   title: 'Add a new list',
   islistAdd: true
 }
 
-const getLists = lists => {
-  const listColumns = lists.map(list => {
+const getLists = lists => 
+  lists.map(list => {
     return <List list={list} />
   })
-  listColumns.push(<List list={listAddProps}/>)
-  return listColumns;
-}
+
 
 class Board extends Component {
   constructor(props) {
@@ -25,7 +24,10 @@ class Board extends Component {
         <h2 className="board-name">
           {this.props.board.name}
         </h2>
-        {getLists(this.props.board.lists)}
+        <div className="board-content">
+         {getLists(this.props.board.lists)}
+          <AddList />
+        </div>
       </div>
     );
   }
